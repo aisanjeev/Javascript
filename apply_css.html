@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>A demonstration of how to access an ADDRESS element</h3>
+
+<address id="myAdr">
+Example.com<br>
+Box 564, Disneyland<br>
+USA
+</address>
+
+<p>Click the button to set the text color of the address to red.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myAdr");
+  x.style.color = "red";
+}
+</script>
+
+</body>
+</html>
