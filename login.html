@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+	<script type="text/javascript">
+
+		var first,second,result;
+
+		function captcha()
+		{
+			first=document.getElementById('first')
+			first.value=Math.floor(Math.random() * 10)
+			
+			second=document.getElementById('second')
+			second.value=Math.floor(Math.random() * 10)
+
+		}
+
+		function login()
+		{
+			var user_data={name:["aman","smrity","yogesh"],pass:["aman","smrity","yogesh"]}
+			var user_type=document.getElementById('user_type').value
+
+			if(user_type=="1")
+			{
+				alert("Select any User Type")
+			}
+
+			var user=document.getElementById('user').value
+			var pass=document.getElementById('pass').value
+
+			result=document.getElementById('result').value
+			
+
+			
+
+			alert(result)
+
+			/*if(result==(first+second))
+			{
+
+			}*/
+
+			
+
+		}
+
+		function show()
+		{
+			var pass=document.getElementById('pass').value
+
+			document.getElementById('pass').type="text"
+			
+		}
+	</script>
+</head>
+<body onload="captcha()">
+	Select User Type:<select id="user_type">
+			<option value="1">Select Any user</option>
+			<option value="2">Student</option>
+			<option value="3">Teacher</option>
+			<option value="4">Principal</option>
+			<option value="5">HOD</option>
+	</select><br>
+
+User Name: <input type="text" id="user"><br>
+
+User Password: <input type="password" id="pass"><input type="button" value="show" onclick="show()"><br>
+
+<input type="text" id="first" disabled  style="width:10px">+<input type="text" id="second" disabled style="width:10px">=<input type="text" id="result" style="width:50px"><br>
+
+<input type="button" onclick="login()" value="login">
+
+
+</body>
+</html>
