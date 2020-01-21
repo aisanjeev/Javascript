@@ -4,15 +4,15 @@
 	<title>Demo</title>
 	<script type="text/javascript">
 
-		var first,second,result;
+		var first=0,second=0,result;
 
 		function captcha()
 		{
 			first=document.getElementById('first')
-			first.value=Math.floor(Math.random() * 10)
+			first=first.value=Math.floor(Math.random() * 10)
 			
 			second=document.getElementById('second')
-			second.value=Math.floor(Math.random() * 10)
+			second=second.value=Math.floor(Math.random() * 10)
 
 		}
 
@@ -29,17 +29,31 @@
 			var user=document.getElementById('user').value
 			var pass=document.getElementById('pass').value
 
-			result=document.getElementById('result').value
-			
-
-			
-
-			alert(result)
-
-			/*if(result==(first+second))
+			result=parseInt(document.getElementById('result').value)
+			if (result==(first+second)) {
+			var i
+			for(i=0;i<user_data.name.length;i++)
 			{
+				if(user==user_data.name[i] && pass==user_data.pass[i])
+				{
+					alert("success")
+				break;
+				}
+				else
+				{
+					alert("Failed")
+					break;
+				}
+			}
+		}
+		else
+		{
+			alert("captcha invalid")
+		}
+			
 
-			}*/
+			
+
 
 			
 
@@ -52,6 +66,7 @@
 			document.getElementById('pass').type="text"
 			
 		}
+		
 	</script>
 </head>
 <body onload="captcha()">
